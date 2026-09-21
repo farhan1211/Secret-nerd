@@ -10,6 +10,8 @@ const GOOGLE_SCRIPT_URL =
    ELEMENTS
 ===================================================== */
 
+const email = document.getElementById("email");
+
 const form =
     document.getElementById("dateApplication");
 
@@ -744,12 +746,17 @@ function getCarryRating() {
 ===================================================== */
 
 function checkForm() {
+    const hasEmail =
+        email.value.trim() !== "" &&
+        email.checkValidity();
+
     const hasDateTime = dateTimeInput.value !== "";
     const hasCoffee = getCoffeeValue() !== "";
     const hasCarryRating = getCarryRating() !== "";
     const hasMessage = message.value.trim() !== "";
 
     proceedButton.disabled = !(
+        hasEmail &&
         hasDateTime &&
         hasCoffee &&
         hasCarryRating &&
@@ -766,6 +773,7 @@ message.addEventListener(
     checkForm
 );
 
+email.addEventListener("input", checkForm);
 
 document
     .querySelectorAll(
@@ -813,6 +821,7 @@ form.addEventListener(
         ============================================== */
 
        const applicationData = {
+    email: email.value.trim(),
     dateTime: dateTimeInput.value,
     coffee: getCoffeeValue(),
     carryRating: getCarryRating(),
