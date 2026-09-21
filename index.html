@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Application Form | Secret Nerd</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+
+    <!-- Animated background -->
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+
+    <main class="page">
+
+        <section class="card application-card">
+
+            <div class="eyebrow">
+                OFFICIAL APPLICATION
+            </div>
+
+
+            <h1>
+                Application form for going out with the
+                <span>Secret Nerd</span>
+            </h1>
+
+
+            <p class="intro">
+                Please fill out the extremely important paperwork below.
+                Your answers will be reviewed very seriously.
+            </p>
+
+
+            <form id="dateApplication">
+
+
+                <!-- =================================================
+                     DATE & TIME
+                ================================================== -->
+
+                <div class="form-group date-time-group">
+
+                    <label>
+                        When do you wanna go out?
+                        <span class="required">*</span>
+                    </label>
+
+
+                    <!-- DATE PICKER -->
+
+                    <div class="date-picker">
+
+                        <div class="calendar-header">
+
+                            <button
+                                type="button"
+                                id="previousMonth"
+                                class="calendar-arrow"
+                            >
+                                ←
+                            </button>
+
+
+                            <div
+                                id="currentMonth"
+                                class="calendar-month"
+                            >
+                                September 2026
+                            </div>
+
+
+                            <button
+                                type="button"
+                                id="nextMonth"
+                                class="calendar-arrow"
+                            >
+                                →
+                            </button>
+
+                        </div>
+
+
+                        <div class="weekdays">
+
+                            <span>Mon</span>
+                            <span>Tue</span>
+                            <span>Wed</span>
+                            <span>Thu</span>
+                            <span>Fri</span>
+                            <span>Sat</span>
+                            <span>Sun</span>
+
+                        </div>
+
+
+                        <div
+                            id="calendarDays"
+                            class="calendar-days"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- SELECTED DATE -->
+
+                    <div
+                        id="selectedDateDisplay"
+                        class="selected-date-display hidden"
+                    >
+
+                        <div class="selected-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <small>
+                                SELECTED DATE
+                            </small>
+
+                            <strong id="selectedDateText">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="changeDateButton"
+                        >
+                            Change
+                        </button>
+
+                    </div>
+
+
+                    <!-- TIME -->
+
+                    <div
+                        id="timeSection"
+                        class="time-section hidden"
+                    >
+
+                        <div class="time-heading">
+
+                            <span>
+                                What time works for you?
+                            </span>
+
+                            <small>
+                                Pick a time
+                            </small>
+
+                        </div>
+
+
+                        <div
+                            id="timeSlots"
+                            class="time-slots"
+                        >
+
+                            <!-- Generated by JavaScript -->
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FINAL DATE/TIME -->
+
+                    <div
+                        id="finalDateTime"
+                        class="final-date-time hidden"
+                    >
+
+                        <div class="final-check">
+                            ✓
+                        </div>
+
+
+                        <div class="final-date-info">
+
+                            <small>
+                                YOUR PLAN
+                            </small>
+
+                            <strong id="finalDateText">
+                                —
+                            </strong>
+
+                            <span id="finalTimeText">
+                                —
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="changeTimeButton"
+                        >
+                            Change
+                        </button>
+
+                    </div>
+
+
+                    <!-- Hidden input used for form validation -->
+
+                    <input
+                        type="hidden"
+                        id="dateTime"
+                        name="dateTime"
+                    >
+
+                </div>
+
+
+
+                <!-- =================================================
+                     COFFEE QUESTION
+                ================================================== -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Would you like to have a vietnamese coffee
+                        in the morning from blue tokai?
+
+                        <span class="required">*</span>
+
+                    </label>
+
+
+                    <div class="choice-container">
+
+                        <label class="choice">
+
+                            <input
+                                type="radio"
+                                name="coffee"
+                                value="yes"
+                            >
+
+                            <span class="choice-box">
+                                Yes
+                            </span>
+
+                        </label>
+
+
+                        <label class="choice">
+
+                            <input
+                                type="radio"
+                                name="coffee"
+                                value="no"
+                            >
+
+                            <span class="choice-box">
+                                No
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+                
+<!-- Carry Around Rating -->
+<div class="form-group carry-rating-group">
+    <label>
+        On a scale of 1 to 10, how badly do you want me to carry you around in my arms with your shoulder on my bag?
+        <span class="required">*</span>
+    </label>
+
+    <p class="rating-disclaimer">
+        If you select anything less than 10, I will not carry you around. 🙂
+    </p>
+
+    <div class="rating-container" id="carryRating">
+        <label class="rating-option">
+            <input type="radio" name="carryRating" value="1">
+            <span>1</span>
+        </label>
+
+        <label class="rating-option">
+            <input type="radio" name="carryRating" value="2">
+            <span>2</span>
+        </label>
+
+        <label class="rating-option">
+            <input type="radio" name="carryRating" value="3">
+            <span>3</span>
+        </label>
+
+        <label class="rating-option">
+            <input type="radio" name="carryRating" value="4">
+            <span>4</span>
+        </label>
+
+        <label class="rating-option">
+            <input type="radio" name="carryRating" value="5">
+            <span>5</span>
+        </label>
+
+        <label class="rating-option">
+            <input type="radio" name="carryRating" value="6">
+            <span>6</span>
+        </label>
+
+        <label class="rating-option">
+            <input type="radio" name="carryRating" value="7">
+            <span>7</span>
+        </label>
+
+        <label class="rating-option">
+            <input type="radio" name="carryRating" value="8">
+            <span>8</span>
+        </label>
+
+        <label class="rating-option">
+            <input type="radio" name="carryRating" value="9">
+            <span>9</span>
+        </label>
+
+        <label class="rating-option">
+            <input type="radio" name="carryRating" value="10">
+            <span>10</span>
+        </label>
+    </div>
+</div>
+
+
+                <!-- =================================================
+                     MESSAGE
+                ================================================== -->
+
+                <div class="form-group">
+
+                    <label for="message">
+
+                        Do you want to tell something specifically
+                        to your secret nerd which he needs to do
+                        to make this plan more memorable?
+
+                        <span class="required">*</span>
+
+                    </label>
+
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        placeholder="Anything specific you'd like him to know..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PROCEED
+                ================================================== -->
+
+                <button
+                    type="submit"
+                    id="proceedButton"
+                    class="primary-button"
+                    disabled
+                >
+
+                    <span>
+                        Proceed
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
