@@ -1574,3 +1574,489 @@ body {
         min-height: 48px;
     }
 }
+
+.confirmation-image {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    margin: 25px auto;
+    border-radius: 18px;
+    object-fit: cover;
+    box-shadow: 0 12px 30px rgba(36, 29, 29, 0.15);
+}
+
+/* =========================================================
+   SECRET NERD - ANIMATIONS
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. PAGE LOAD
+   --------------------------------------------------------- */
+
+body {
+    animation: pageFadeIn 0.7s ease-out;
+}
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   2. MAIN CONTAINER
+   --------------------------------------------------------- */
+
+.container,
+.main-container {
+    animation: containerReveal 0.8s ease-out;
+}
+
+@keyframes containerReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   3. HEADING ANIMATION
+   --------------------------------------------------------- */
+
+h1 {
+    animation: headingReveal 0.9s ease-out;
+}
+
+@keyframes headingReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   4. FORM QUESTIONS APPEAR ONE BY ONE
+   --------------------------------------------------------- */
+
+.form-group {
+    opacity: 0;
+    animation: questionReveal 0.7s ease-out forwards;
+}
+
+.form-group:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.form-group:nth-child(2) {
+    animation-delay: 0.35s;
+}
+
+.form-group:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.form-group:nth-child(4) {
+    animation-delay: 0.65s;
+}
+
+.form-group:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+@keyframes questionReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   5. INPUT FOCUS
+   --------------------------------------------------------- */
+
+input,
+textarea,
+select {
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    transform: translateY(-2px);
+}
+
+
+/* ---------------------------------------------------------
+   6. YES / NO BUTTONS
+   --------------------------------------------------------- */
+
+.coffee-option {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.coffee-option:hover {
+    transform: translateY(-3px);
+}
+
+.coffee-option:active {
+    transform: scale(0.96);
+}
+
+
+/* ---------------------------------------------------------
+   7. SELECTED OPTION
+   --------------------------------------------------------- */
+
+.coffee-option.selected {
+    animation: selectedPop 0.35s ease-out;
+}
+
+@keyframes selectedPop {
+    0% {
+        transform: scale(0.95);
+    }
+
+    60% {
+        transform: scale(1.04);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   8. RATING BUTTONS
+   --------------------------------------------------------- */
+
+.rating-option {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.rating-option:hover {
+    transform: translateY(-4px);
+}
+
+.rating-option:active {
+    transform: scale(0.9);
+}
+
+.rating-option.selected {
+    animation: ratingPop 0.35s ease-out;
+}
+
+@keyframes ratingPop {
+    0% {
+        transform: scale(0.8);
+    }
+
+    60% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   9. PROCEED BUTTON
+   --------------------------------------------------------- */
+
+#proceedButton {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.25s ease;
+}
+
+#proceedButton:not(:disabled):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(143, 48, 56, 0.25);
+}
+
+#proceedButton:not(:disabled):active {
+    transform: scale(0.96);
+}
+
+
+/* ---------------------------------------------------------
+   10. BUTTON ARROW
+   --------------------------------------------------------- */
+
+#proceedButton .button-arrow {
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+#proceedButton:not(:disabled):hover .button-arrow {
+    transform: translateX(5px);
+}
+
+
+/* ---------------------------------------------------------
+   11. TEXTAREA
+   --------------------------------------------------------- */
+
+textarea {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+textarea:focus {
+    transform: translateY(-2px);
+}
+
+
+/* ---------------------------------------------------------
+   12. FLOATING BACKGROUND PARTICLES
+   --------------------------------------------------------- */
+
+.background-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0;
+    font-size: 16px;
+    animation: floatingParticle 6s ease-in-out infinite;
+}
+
+@keyframes floatingParticle {
+
+    0% {
+        opacity: 0;
+        transform: translateY(20px) rotate(0deg);
+    }
+
+    20% {
+        opacity: 0.35;
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(10deg);
+    }
+
+    80% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-60px) rotate(-10deg);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   13. PAGE TRANSITION
+   --------------------------------------------------------- */
+
+.page-exit {
+    animation: pageExit 0.5s ease forwards;
+}
+
+@keyframes pageExit {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   14. SUCCESS CHECKMARK
+   --------------------------------------------------------- */
+
+.success-check {
+    animation: successCheck 0.7s cubic-bezier(.17,.67,.3,1.3);
+}
+
+@keyframes successCheck {
+
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   15. CONFIRMATION IMAGE
+   --------------------------------------------------------- */
+
+.confirmation-image {
+    animation: imageReveal 1s ease-out;
+}
+
+@keyframes imageReveal {
+
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   16. CONFIRMATION MESSAGE
+   --------------------------------------------------------- */
+
+.confirmation-message {
+    animation: messageReveal 0.8s ease-out 0.3s both;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@keyframes messageReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.sparkles {
+    text-align: center;
+    margin-top: 20px;
+    color: #8f3038;
+    font-size: 18px;
+    letter-spacing: 8px;
+}
+
+/* ---------------------------------------------------------
+   17. REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+.check-circle {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(143, 48, 56, 0.1);
+    border: 2px solid rgba(143, 48, 56, 0.35);
+
+    color: #8f3038;
+
+    font-size: 38px;
+    font-weight: 700;
+
+    animation: checkCircleReveal 0.8s
+        cubic-bezier(.17,.67,.3,1.3);
+}
+
+@keyframes checkCircleReveal {
+
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(-30deg);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.15) rotate(5deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
+
+.check-circle {
+    animation:
+        checkCircleReveal 0.8s cubic-bezier(.17,.67,.3,1.3),
+        checkPulse 2.5s ease-in-out 1s infinite;
+}
+
+@keyframes checkPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 rgba(143, 48, 56, 0);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 10px rgba(143, 48, 56, 0.05);
+    }
+}
