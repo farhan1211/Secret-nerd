@@ -7,7 +7,13 @@ const yesButton = document.getElementById("yesButton");
 ========================================= */
 
 yesButton.addEventListener("click", function () {
-    window.location.href = "thanks.html";
+
+    document.body.classList.add("page-exit");
+
+    setTimeout(() => {
+        window.location.href = "thanks.html";
+    }, 500);
+
 });
 
 
