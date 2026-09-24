@@ -816,6 +816,7 @@ form.addEventListener(
         }
 
 
+
         /* =============================================
            COLLECT RESPONSE
         ============================================== */
@@ -892,8 +893,11 @@ form.addEventListener(
             setTimeout(
                 function () {
 
-                    window.location.href =
-                        "question.html";
+                    document.body.classList.add("page-exit");
+
+setTimeout(() => {
+    window.location.href = "question.html";
+}, 500);
 
                 },
                 700
@@ -938,3 +942,38 @@ form.addEventListener(
 renderCalendar();
 
 checkForm();
+
+/* =========================================================
+   FLOATING BACKGROUND PARTICLES
+   ========================================================= */
+
+function createParticles() {
+
+    const symbols = ["✦", "✧", "·", "✦"];
+
+    for (let i = 0; i < 12; i++) {
+
+        const particle = document.createElement("div");
+
+        particle.className = "background-particle";
+
+        particle.textContent =
+            symbols[Math.floor(Math.random() * symbols.length)];
+
+        particle.style.left =
+            Math.random() * 100 + "%";
+
+        particle.style.top =
+            Math.random() * 100 + "%";
+
+        particle.style.animationDelay =
+            Math.random() * 6 + "s";
+
+        particle.style.animationDuration =
+            5 + Math.random() * 4 + "s";
+
+        document.body.appendChild(particle);
+    }
+}
+
+createParticles();
